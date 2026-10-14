@@ -5,6 +5,7 @@ import com.example.demo.task.model.TaskPriority
 import com.example.demo.task.model.TaskStatus
 import org.springframework.stereotype.Repository
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 @Repository
 class TaskRepository {
@@ -52,5 +53,16 @@ class TaskRepository {
 
     fun findAll(): List<Task> {
         return storage.values.toList()
+    }
+
+    fun createTask(
+        creatorId: Long,
+        assignedUserId: Long,
+        deadlineDate: LocalDate,
+        priority: TaskPriority,
+        status: TaskStatus,
+        createDateTime: LocalDateTime,
+    ): Task {
+        
     }
 }
